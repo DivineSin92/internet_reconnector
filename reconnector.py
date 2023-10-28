@@ -16,7 +16,9 @@ def internet_connection():
 if __name__ == '__main__':
     while True:
         if internet_connection():
-            print("The internet is OK")
+            #os.system('cmd /c "ping www.google.com"')
+            pass
         else:
-            os.system('cmd /c "netsh wlan connect name = dlink-6AED"')
-        time.sleep(2)
+            os.system('cmd /c "netsh wlan disconnect"')
+            os.system('cmd /c "netsh wlan connect name = "') #add name of network
+        time.sleep(1)
